@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Financial Calculator</h1>
+
+        <label for="calculationType">Choose calculation type:</label>
+        <select id="calculationType" onchange="showForm()">
+            <option value="">Select...</option>
+            <option value="emi">EMI Calculator</option>
+            <option value="fd">Fixed Deposit Calculator</option>
+            <option value="sip">SIP Calculator</option>
+        </select>
+
+        <div id="emiForm" class="form-section">
+            <h2>EMI Calculator</h2>
+            <label for="loanAmount">Loan Amount:</label>
+            <input type="number" id="loanAmount" required><br>
+            <label for="annualInterestRate">Annual Interest Rate (%):</label>
+            <input type="number" id="annualInterestRate" step="0.01" required><br>
+            <label for="loanYears">Loan Term (years):</label>
+            <input type="number" id="loanYears" required><br>
+            <button type="button" onclick="calculateEMI()">Calculate EMI</button>
+            <p id="emiResult"></p>
+        </div>
+
+        <div id="fdForm" class="form-section">
+            <h2>Fixed Deposit Calculator</h2>
+            <label for="fdAmount">Deposit Amount:</label>
+            <input type="number" id="fdAmount" required><br>
+            <label for="fdInterestRate">Annual Interest Rate (%):</label>
+            <input type="number" id="fdInterestRate" step="0.01" required><br>
+            <label for="fdYears">Term (years):</label>
+            <input type="number" id="fdYears" required><br>
+            <button type="button" onclick="calculateFD()">Calculate FD Returns</button>
+            <p id="fdResult"></p>
+        </div>
+
+        <div id="sipForm" class="form-section">
+            <h2>SIP Calculator</h2>
+            <label for="sipAmount">Monthly Investment:</label>
+            <input type="number" id="sipAmount" required><br>
+            <label for="sipInterestRate">Annual Interest Rate (%):</label>
+            <input type="number" id="sipInterestRate" step="0.01" required><br>
+            <label for="sipYears">Term (years):</label>
+            <input type="number" id="sipYears" required><br>
+            <label for="annualIncrease">Annual Increase in Investment (%):</label>
+            <input type="number" id="annualIncrease" step="0.01"><br>
+            <button type="button" onclick="calculateSIP()">Calculate SIP Returns</button>
+            <p id="sipResult"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
